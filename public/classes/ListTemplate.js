@@ -8,10 +8,9 @@ export class ListTemplate {
         h4.innerText = heading;
         li.append(h4);
         const p = document.createElement("p");
-        p.innerText = item.format(); //had to add the .format as hasFormatter requires it.
+        p.innerText = item.format();
         li.append(p);
         if (position === "start") {
-            //prepend - put at the start of tag
             this.container.prepend(li);
         }
         else {
