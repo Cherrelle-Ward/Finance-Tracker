@@ -1,0 +1,52 @@
+ const anchor = document.querySelector("a")!; // the ! is stating that 'i know there is some kind of a tag in the docs so it will not return null. Or do if statement below.
+
+ if(anchor){
+    console.log(anchor.href);
+ }
+console.log(anchor.href);
+
+
+
+
+
+Interfaces also allow something known as declaration merging, where you can declare it twice or more, and TypeScript will combine all the declarations into a singular interface:
+
+interface Person {
+  firstName: string;
+}
+
+interface Person {
+  lastName: string;
+}
+
+const person: Person = {
+  firstName: 'Tom',
+  lastName: 'Jones'
+}; // OK
+
+Generics with interfaces
+
+interface Resource<T>{
+  uid: number,
+  resourceName: String,
+  data: T
+}
+
+when defining the Resource you can define the data (type) then.
+
+EXAMPLE:
+const docThree: Resource<string[]> = {
+  uid:1,
+  resourceName: 'person'
+  data: ['shaun','name']
+}
+
+ANOTHER EXAMPLE:
+const docThree: Resource<object> = {
+  uid:1,
+  resourceName: 'person'
+  data: {
+    name: string,
+    age: number
+  }
+}
